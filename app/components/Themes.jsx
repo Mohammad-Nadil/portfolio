@@ -51,6 +51,9 @@ const Themes = () => {
       >
         <PiGear className="text-3xl aspect-square text-white dark:text-black" />
       </button>
+      {open && (
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-[3px]  z-10"></div>
+      )}
     </>
   );
 };

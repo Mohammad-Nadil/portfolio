@@ -3,7 +3,7 @@ import "./loader.css";
 
 const Loader = () => {
   return (
-    <div className=" h-dvh w-full flex justify-center items-center text-accent bg-white dark:bg-black">
+    <div className=" h-dvh w-full flex justify-center items-center text-black dark:text-white bg-white dark:bg-black">
       <div className="loader ">
         <span className="l ">
           <svg

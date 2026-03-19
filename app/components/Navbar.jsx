@@ -14,6 +14,7 @@ import {
   FaLinkedin,
   FaLinkedinIn,
   FaPhone,
+  FaWhatsapp,
 } from "react-icons/fa6";
 
 const Navbar = () => {
@@ -51,10 +52,48 @@ const Navbar = () => {
     };
   }, [open]);
 
+  const links = [
+    {
+      id: 1,
+      name: "mdhossain.dev@gmail.com",
+      href: "mailto:mdhossain.dev@gmail.com",
+      icon: <FaEnvelope />,
+    },
+    {
+      id: 2,
+      name: "Facebook",
+      href: "https://www.facebook.com/mdhossain.dev",
+      icon: <FaFacebookF />,
+    },
+    {
+      id: 3,
+      name: "Github",
+      href: "https://github.com/Mohammad-Nadil",
+      icon: <FaGithub />,
+    },
+    {
+      id: 4,
+      name: "Linkedin",
+      href: "www.linkedin.com/in/mdhossain-dev",
+      icon: <FaLinkedinIn />,
+    },
+    {
+      id: 5,
+      name: "+8801760152349",
+      href: "tel:+8801760152349",
+      icon: <FaPhone />,
+    },
+    {
+      id: 6,
+      name: "whatsapp",
+      href: "https://wa.me/8801760152349",
+      icon: <FaWhatsapp />,
+    }
+  ];
+
   return (
     <nav className=" sticky top-0 z-50 ">
-      <Container 
-      className={`h-12 sm:py-3 flex justify-between items-center`}>
+      <Container className={`h-12 sm:py-3 flex justify-between items-center`}>
         <div className="left flex items-center gap-x-6 md:gap-x-11 ">
           <Logo className={" w-8 md:w-9"} />
           <ul className="menu hidden sm:flex items-center gap-4 md:gap-x-6">
@@ -90,7 +129,7 @@ const Navbar = () => {
         </div>
       </Container>
       <Container
-        className={` bg-black/15 backdrop-blur-xs flex flex-col items-end text-end gap-y-5 absolute top-12 left-0 min-h-[calc(100dvh-3rem)] w-full px-5 z-999 sm:hidden duration-300 py-6 ${
+        className={` bg-black/15 backdrop-blur-[3px] flex flex-col items-end text-end gap-y-5 absolute top-12 left-0 min-h-[calc(100dvh-3rem)] w-full px-5 z-999 sm:hidden duration-300 py-6 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -115,46 +154,18 @@ const Navbar = () => {
           </div>
         </div>
         <div className="w-full flex flex-wrap items-center gap-x-6 gap-y-3">
-          <a
-            href="mailto:mdhossain.dev@gmail.com"
-            className="flex items-center gap-1 w-full"
-          >
-            <FaArrowRightLong className="text-xl -rotate-45 " />
-            <FaEnvelope className="" />
-            <p className="text-secondary">mdhossain.dev@gmail.com</p>
-          </a>
-          <a
-            href="https://github.com/Mohammad-Nadil"
-            className="flex items-center gap-1 "
-          >
-            <FaArrowRightLong className="text-xl -rotate-45 " />
-            <FaGithub className="" />
-            <p className="text-secondary">github</p>
-          </a>
-          <a
-            href="https://www.facebook.com/"
-            className="flex items-center gap-1 "
-          >
-            <FaArrowRightLong className="text-xl -rotate-45 " />
-            <FaFacebookF className="" />
-            <p className="text-secondary">facebook</p>
-          </a>
-          <a
-            href="mailto:mdhossain.dev@gmail.com"
-            className="flex items-center gap-1 "
-          >
-            <FaArrowRightLong className="text-xl -rotate-45 " />
-            <FaPhone className="" />
-            <p className="text-secondary">+8801760152349</p>
-          </a>
-          <a
-            href="mailto:mdhossain.dev@gmail.com"
-            className="flex items-center gap-1 "
-          >
-            <FaArrowRightLong className="text-xl -rotate-45 " />
-            <FaLinkedinIn className="" />
-            <p className="text-secondary">linkedin</p>
-          </a>
+          {links.map((link) => (
+            <a
+              key={link.id}
+              target="_blank"
+              href={link.href}
+              className="flex items-center gap-1 "
+            >
+              <FaArrowRightLong className="text-xl -rotate-45 " />
+              {link.icon}
+              <p className="text-secondary">{link.name}</p>
+            </a>
+          ))}
         </div>
       </Container>
     </nav>

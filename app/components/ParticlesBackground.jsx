@@ -1,0 +1,97 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import { useTheme } from "next-themes";
+
+export default function ParticlesBackground() {
+  const [init, setInit] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    const initParticles = async () => {
+      await loadSlim(window.tsParticles);
+      setInit(true);
+    };
+    initParticles();
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (!init) return null;
+
+  const isDark = resolvedTheme === "dark";
+
+  return (
+    <Particles
+      className="absolute inset-0 -z-10"
+      id="tsparticles"
+      options={{
+        fullScreen: { enable: false },
+        background: { color: "transparent" },
+        fpsLimit: 75,
+        particles: {
+          number: {
+            value: isMobile ? 30 : 150,
+            density: {
+              enable: !isMobile,
+              value_area: 800,
+            },
+          },
+
+          color: {
+            value: isDark ? "#ffffff" : "#000000",
+          },
+
+          links: {
+            enable: true,
+            color: isDark ? "#ffffffaa" : "#000000aa",
+            opacity: 0.3,
+          },
+
+          move: {
+            enable: true,
+            speed: isMobile ? 0.8 : 1.5, // 🔥 smoother
+          },
+
+          size: {
+            value: isMobile ? 1.2 : 2,
+          },
+
+          opacity: {
+            value: 0.6,
+          },
+        },
+
+        interactivity: {
+          events: {
+            onHover: {
+              enable: !isMobile,
+              mode: "grab",
+            },
+            onClick: {
+              enable: true,
+              mode: "push",
+            },
+          },
+          modes: {
+            grab: {
+              distance: 120,
+              links: { opacity: 1 },
+            },
+            push: {
+              quantity: isMobile ? 2 : 4,
+            },
+          },
+        },
+      }}
+    />
+  );
+}
