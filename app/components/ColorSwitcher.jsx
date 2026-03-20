@@ -29,6 +29,8 @@ const ColorSwitcher = () => {
     applyTheme(themeName);
     localStorage.setItem("accent-theme", themeName);
     setActive(themeName);
+
+    window.dispatchEvent(new Event("accent-change"));
   };
 
   return (

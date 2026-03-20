@@ -22,11 +22,11 @@ const Navbar = () => {
   const list = [
     {
       id: 1,
-      name: "Home",
+      name: "hero",
     },
     {
       id: 2,
-      name: "About",
+      name: "about",
     },
     {
       id: 3,
@@ -88,11 +88,12 @@ const Navbar = () => {
       name: "whatsapp",
       href: "https://wa.me/8801760152349",
       icon: <FaWhatsapp />,
-    }
+    },
   ];
 
   return (
-    <nav className=" sticky top-0 z-50 ">
+    <nav className=" sticky  top-0 z-100  ">
+      <div className="absolute h-full w-full backdrop-blur -z-10"></div>
       <Container className={`h-12 sm:py-3 flex justify-between items-center`}>
         <div className="left flex items-center gap-x-6 md:gap-x-11 ">
           <Logo className={" w-8 md:w-9"} />
@@ -129,9 +130,9 @@ const Navbar = () => {
         </div>
       </Container>
       <Container
-        className={` bg-black/15 backdrop-blur-[3px] flex flex-col items-end text-end gap-y-5 absolute top-12 left-0 min-h-[calc(100dvh-3rem)] w-full px-5 z-999 sm:hidden duration-300 py-6 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={` fixed top-12 left-0 w-full h-[calc(100dvh-3rem)]  bg-black/30 backdrop-blur flex flex-col items-end text-end gap-y-5 z-50 sm:hidden duration-300 py-6 px-5
+    ${open ? "translate-x-0" : "translate-x-full"}
+  `}
       >
         <ul className="menu flex flex-1 flex-col items-end w-full gap-y-3 xs:gap-y-6  py-4">
           {list.map((item) => (

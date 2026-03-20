@@ -28,7 +28,7 @@ const Themes = () => {
     <>
       <div
         ref={panelRef}
-        className={`fixed flex bottom-0 md:bottom-1/2 right-0 transform -translate-y-1/2   flex-col gap-5 p-4 rounded-l-2xl  bg-white dark:bg-gray-900 shadow-xl transition-transform duration-300 z-20 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed flex bottom-0 md:bottom-1/2 right-0 transform -translate-y-1/2   flex-col gap-5 p-4 rounded-l-2xl  bg-white dark:bg-gray-900 shadow-xl transition-transform duration-300 z-50 ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <div>
           <h1 className="font-semibold mb-1 ">Accent Color</h1>
@@ -40,7 +40,7 @@ const Themes = () => {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className="hidden md:block absolute top-1/2 -left-10 transform -translate-y-1/2   bg-accent dark:bg-yellow-400 text-black p-1 md:p-2 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-all"
+          className="hidden md:block absolute top-1/2 -left-10 transform -translate-y-1/2   bg-accent  text-black p-1 md:p-2 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-all"
         >
           <PiGear className="text-2xl aspect-square" />
         </div>
@@ -51,8 +51,8 @@ const Themes = () => {
       >
         <PiGear className="text-3xl aspect-square text-white dark:text-black" />
       </button>
-      {open && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-[3px]  z-10"></div>
+      {false && (
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-[3px]  z-40"></div>
       )}
     </>
   );

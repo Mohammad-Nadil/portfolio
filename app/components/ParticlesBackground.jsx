@@ -9,6 +9,7 @@ export default function ParticlesBackground() {
   const [init, setInit] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const { resolvedTheme } = useTheme();
+  const [accent, setAccent] = useState("");
 
   useEffect(() => {
     const initParticles = async () => {
@@ -21,77 +22,91 @@ export default function ParticlesBackground() {
     };
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (!init) return null;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const updateAccent = () => {
+      const color = getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-accent")
+        .trim();
+      setAccent(color);
+    };
+    updateAccent();
+    window.addEventListener("accent-change", updateAccent);
+    return () => {
+      window.removeEventListener("accent-change", updateAccent);
+    };
+  }, []);
 
+  if (!init) return null;
   const isDark = resolvedTheme === "dark";
 
   return (
-    <Particles
-      className="absolute inset-0 -z-10"
-      id="tsparticles"
-      options={{
-        fullScreen: { enable: false },
-        background: { color: "transparent" },
-        fpsLimit: 75,
-        particles: {
-          number: {
-            value: isMobile ? 30 : 150,
-            density: {
-              enable: !isMobile,
-              value_area: 800,
+      <Particles
+        key={accent}
+        className="absolute inset-0 -z-10"
+        id="tsparticles"
+        options={{
+          fullScreen: { enable: false },
+          background: { color: "transparent" },
+          fpsLimit: 75,
+          particles: {
+            number: {
+              value: isMobile ? 30 : 150,
+              density: {
+                enable: !isMobile,
+                value_area: 800,
+              },
             },
-          },
 
-          color: {
-            value: isDark ? "#ffffff" : "#000000",
-          },
-
-          links: {
-            enable: true,
-            color: isDark ? "#ffffffaa" : "#000000aa",
-            opacity: 0.3,
-          },
-
-          move: {
-            enable: true,
-            speed: isMobile ? 0.8 : 1.5, // 🔥 smoother
-          },
-
-          size: {
-            value: isMobile ? 1.2 : 2,
-          },
-
-          opacity: {
-            value: 0.6,
-          },
-        },
-
-        interactivity: {
-          events: {
-            onHover: {
-              enable: !isMobile,
-              mode: "grab",
+            color: {
+              value: accent,
             },
-            onClick: {
+
+            links: {
               enable: true,
-              mode: "push",
+              color: isDark ? "#ffffffaa" : "#000000aa",
+              opacity: 0.3,
+            },
+
+            move: {
+              enable: true,
+              speed: isMobile ? 0.8 : 1.5, // 🔥 smoother
+            },
+
+            size: {
+              value: isMobile ? 1.2 : 2,
+            },
+
+            opacity: {
+              value: 0.6,
             },
           },
-          modes: {
-            grab: {
-              distance: 120,
-              links: { opacity: 1 },
+
+          interactivity: {
+            events: {
+              onHover: {
+                enable: !isMobile,
+                mode: "grab",
+              },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
             },
-            push: {
-              quantity: isMobile ? 2 : 4,
+            modes: {
+              grab: {
+                distance: 120,
+                links: { opacity: 1 },
+              },
+              push: {
+                quantity: isMobile ? 2 : 4,
+              },
             },
           },
-        },
-      }}
-    />
+        }}
+      />
   );
 }
