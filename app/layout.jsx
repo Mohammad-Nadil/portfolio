@@ -20,7 +20,19 @@ export const figtree = Figtree({
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
-  useEffect(() => setLoading(false), []);
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
   if (loading)
     return (
       <html lang="en" suppressHydrationWarning className="overflow-x-clip">
