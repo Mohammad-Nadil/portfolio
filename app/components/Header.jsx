@@ -5,7 +5,7 @@ const Header = ({ text, className }) => {
     <h1
       className={`text-4xl sm:text-6xl font-bold tracking-wide capitalize py-5 md:py-10 text-center mx-auto relative  ${className}`}
     >
-      {text} <span className="absolute bottom-1/2 left-1/2 -translate-x-1/2  scale-150  font-bold text-accent/10 text-nowrap  " >{text}</span> <span className="text-accent">_</span>
+      {text} <span className="absolute bottom-1/2 left-1/2 -translate-x-1/2  scale-150  font-bold text-accent/20 dark:text-accent/30 -z-10   text-nowrap select-none  " >{text}</span> <span className="text-accent">_</span>
     </h1>
   );
 };

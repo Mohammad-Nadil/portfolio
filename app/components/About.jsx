@@ -146,7 +146,7 @@ const About = () => {
                 {skills.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-xl border border-black/10 dark:border-white/10  dark:bg-white/5 hover:bg-white/10 transition group hover:bg-linear-to-br hover:from-accent/20 hover:via-accent/0 hover:border-accent/70"
+                    className="p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10  dark:bg-white/5 hover:bg-white/10 transition group hover:bg-linear-to-br hover:from-accent/20 hover:via-accent/0 hover:border-accent/70"
                   >
                     {/* ICON */}
                     <div className="text-2xl mb-4 text-accent transition">

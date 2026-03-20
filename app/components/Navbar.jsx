@@ -19,6 +19,7 @@ import {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const list = [
     {
       id: 1,
@@ -39,17 +40,22 @@ const Navbar = () => {
   ];
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
-      document.body.classList.add("h-dvh");
-    } else {
-      document.body.style.overflow = "";
-      document.body.classList.remove("h-dvh");
-    }
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
 
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = "";
-    };
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
   }, [open]);
 
   const links = [
@@ -94,8 +100,8 @@ const Navbar = () => {
   return (
     <nav className=" sticky  top-0 z-100  ">
       <div className="absolute h-full w-full backdrop-blur -z-10"></div>
-      <Container className={`h-12 sm:py-3 flex justify-between items-center`}>
-        <div className="left flex items-center gap-x-6 md:gap-x-11 ">
+      <Container className={`h-12 sm:py-3 px-0! flex justify-between items-center`}>
+        <div className="left flex items-center gap-x-6 md:gap-x-11 px-3 ">
           <Logo className={" w-8 md:w-9"} />
           <ul className="menu hidden sm:flex items-center gap-4 md:gap-x-6">
             {list.map((item) => (
@@ -114,13 +120,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="right">
-          <button
+          <div
             onClick={() => setOpen(!open)}
-            className="flex sm:hidden items-center gap-0.5 hover:cursor-pointer duration-300 text-2xl"
+            className="flex sm:hidden items-center gap-0.5 hover:cursor-pointer duration-300 text-2xl p-2 text-right"
           >
             {open ? <IoClose /> : <HiOutlineBars3BottomRight />}
             {open ? "Close" : "Menu"}
-          </button>
+          </div>
           <a
             href="mailto:mdhossain.dev@gmail.com"
             className="text-secondary text-xs md:text-base hover:text-accent uppercase hidden sm:block"
@@ -130,7 +136,7 @@ const Navbar = () => {
         </div>
       </Container>
       <Container
-        className={` fixed top-12 left-0 w-full h-[calc(100dvh-3rem)]  bg-black/30 backdrop-blur flex flex-col items-end text-end gap-y-5 z-50 sm:hidden duration-300 py-6 px-5
+        className={`fixed top-12 left-0 w-full h-[calc(100dvh-3rem)] bg-black/30 backdrop-blur flex flex-col items-end text-end gap-y-5 z-50 sm:hidden duration-300 py-6 px-5
     ${open ? "translate-x-0" : "translate-x-full"}
   `}
       >
