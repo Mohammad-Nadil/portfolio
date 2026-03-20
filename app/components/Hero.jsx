@@ -21,7 +21,7 @@ const Hero = () => {
           <Image
             src={imgPlace}
             alt="placeholder"
-            className="grayscale-100 dark:brightness-75 duration-300  h-full object-cover rounded-xs sm:rounded-xl "
+            className="dark:grayscale-100 dark:brightness-75 duration-300  h-full object-cover rounded-xs sm:rounded-xl "
           />
         </div>
         <h1
