@@ -6,6 +6,7 @@ import Test from "./components/BlankSpace";
 import About from "./components/About";
 import BlankSpace from "./components/BlankSpace";
 import Skills from "./components/Skills";
+import Faq from "./components/Faq";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <Hero />
       <About />
       <Skills />
+      <Faq />
       <BlankSpace />
     </div>
   );
