@@ -10,7 +10,11 @@ const Themes = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (panelRef.current && !panelRef.current.contains(e.target)) {
+      if (
+        panelRef.current &&
+        !panelRef.current.contains(e.target) &&
+        !e.target.closest("#mobileThemeButton") // ignore mobile button
+      ) {
         setOpen(false);
       }
     };
@@ -46,8 +50,9 @@ const Themes = () => {
         </div>
       </div>
       <button
+        id="mobileThemeButton"
         onClick={() => setOpen(!open)}
-        className="fixed md:hidden bottom-0 right-0 -translate-1/3 bg-accent rounded-full p-1.5 z-20"
+        className="fixed md: bottom-0 right-0 -translate-1/3 bg-accent rounded-full p-1.5 z-20"
       >
         <PiGear className="text-3xl aspect-square text-white dark:text-black" />
       </button>
