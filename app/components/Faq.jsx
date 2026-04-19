@@ -69,7 +69,7 @@ const Faq = () => {
               </div>
               <div
                 className={`px-6 overflow-hidden transition-all duration-500 ${
-                  activeIndex === index ? "max-h-200 pb-4" : "max-h-0"
+                  activeIndex === index ? "max-h-50 pb-4" : "max-h-0"
                 }`}
               >
                 <p className="text-secondary  leading-relaxed">{item.answer}</p>

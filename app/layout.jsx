@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import Themes from "./components/Themes";
+import MouseTracker from "./components/MouseTracker";
 
 export const figtree = Figtree({
   variable: "--font-figtree",
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
           <LenisProvider>
             <Navbar />
             {children}
+            <MouseTracker />
             <Themes />
           </LenisProvider>
         </ThemeProvider>

@@ -31,7 +31,7 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: "Projects",
+      name: "projects",
     },
     {
       id: 4,
