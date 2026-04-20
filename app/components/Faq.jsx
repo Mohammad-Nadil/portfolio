@@ -68,7 +68,7 @@ const Faq = () => {
                 </span>
               </div>
               <div
-                className={`px-6 overflow-hidden transition-all duration-500 ${
+                className={`px-6 overflow-hidden transition-all duration-300 ${
                   activeIndex === index ? "max-h-50 pb-4" : "max-h-0"
                 }`}
               >
