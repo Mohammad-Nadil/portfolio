@@ -1,11 +1,14 @@
 import React from "react";
+import dynamic from "next/dynamic";
+
 import Hero from "./components/Hero";
 import About from "./components/About";
-import BlankSpace from "./components/BlankSpace";
-import Skills from "./components/Skills";
-import Faq from "./components/Faq";
-import Timeline from "./components/Timeline";
-import Projects from "./components/Projects";
+const Skills = dynamic(() => import("./components/Skills"));
+const Projects = dynamic(() => import("./components/Projects"));
+const Faq = dynamic(() => import("./components/Faq"));
+const Contact = dynamic(() => import("./components/Contact"));
+
+// import Timeline from "./components/Timeline";
 
 const page = () => {
   return (
@@ -13,10 +16,10 @@ const page = () => {
       <Hero />
       <About />
       <Skills />
-      <Faq />
       <Projects />
+      <Faq />
+      <Contact />
       {/* <Timeline /> */}
-      <BlankSpace />
     </div>
   );
 };

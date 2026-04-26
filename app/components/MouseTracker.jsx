@@ -47,7 +47,7 @@ const MouseTracker = ({ className }) => {
     <>
       <div
         ref={circleRef}
-        className={` tracker fixed w-10 h-10 bg-accent/10 dark:bg-accent/30 border border-accent/50 rounded-full -translate-1/2  z-999 pointer-events-none shadow-lg dark:shadow-white/30 ${className}`}
+        className={` tracker fixed w-10 h-10 bg-accent/10 dark:bg-accent/30 border border-accent/50 rounded-full -translate-1/2  z-999 pointer-events-none  ${className}`}
         style={{ left: "0px", top: "0px", transition: "transform 0.4s" }}
       ></div>
     </>

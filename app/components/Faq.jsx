@@ -53,11 +53,9 @@ const Faq = () => {
             <button
               onClick={() => toggleAccordion(index)}
               key={index}
-              className="text-left bg-black/2 dark:bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300"
+              className="text-left bg-[#f5f5f5] dark:bg-white/10 backdrop-blur-3xl dark:backdrop-blur-xs rounded-xl overflow-hidden transition-all duration-300"
             >
-              <div
-                className="flex justify-between items-center w-full px-6 py-4  text-left   hover:text-accent transition-colors font-semibold sm:text-lg"
-              >
+              <div className="flex justify-between items-center w-full px-6 py-4  text-left   hover:text-accent transition-colors font-semibold sm:text-lg">
                 {item.question}
                 <span
                   className={`transform transition-transform duration-300 ${
@@ -78,18 +76,19 @@ const Faq = () => {
           ))}
         </div>
         {/* Action Section */}
-        <div className="mt-16 py-5 sm:py-8 md:py-6  px-6 lg:px-12 text-center md:text-left rounded-2xl bg-white/10 backdrop-blur-md border border-black/10 dark:border-white/20 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-16 py-5 sm:py-8 md:py-6  px-6 lg:px-12 text-center md:text-left rounded-2xl bg-white/60 dark:bg-white/10 border border-black/10 dark:border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md ">
           <div>
-            <h4 className="text-2xl font-bold  ">
-              Still have questions?
-            </h4>
+            <h4 className="text-2xl font-bold  ">Still have questions?</h4>
             <p className="text-secondary 300">
               I'm just a few clicks away from starting our next big thing.
             </p>
           </div>
-          <button className="bg-accent text-white  font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform active:scale-95">
+          <a
+            href="#contact"
+            className="bg-accent text-white  font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform active:scale-95"
+          >
             Drop a Message
-          </button>
+          </a>
         </div>
       </Container>
     </section>

@@ -1,91 +1,39 @@
-"use client";
-import { Figtree } from "next/font/google";
-import LenisProvider from "./components/LenisProvider";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import { useEffect, useState } from "react";
-import Loader from "./components/Loader";
-import Themes from "./components/Themes";
-import MouseTracker from "./components/MouseTracker";
+import Providers from "./Providers";
+import { Figtree, Audiowide, Oxanium } from "next/font/google";
 
-export const figtree = Figtree({
-  variable: "--font-figtree",
+const figtree = Figtree({
   subsets: ["latin"],
+  variable: "--font-figtree",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-// export const metadata = {
-//   title: "Portfolio",
-//   description: "",
-// };
+const audiowide = Audiowide({
+  subsets: ["latin"],
+  variable: "--font-audiowide",
+  weight: ["400"],
+});
+
+const oxanium = Oxanium({
+  subsets: ["latin"],
+  variable: "--font-oxanium",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+export const metadata = {
+  title: "Portfolio",
+  description:
+    "My personal portfolio website showcasing my skills and projects.",
+};
 
 export default function RootLayout({ children }) {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const handleLoad = () => setLoading(false);
-
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-  if (loading)
-    return (
-      <html lang="en" suppressHydrationWarning className="overflow-x-clip">
-        <body
-          cz-shortcut-listen="true"
-          className={` font-figtree! overflow-x-clip relative ${figtree.variable}`}
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Loader />
-          </ThemeProvider>
-        </body>
-      </html>
-    );
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-clip">
-      <head>
-        {/* <title>Portfolio</title> */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-        (function() {
-          try {
-            const theme = localStorage.getItem('theme');
-            document.documentElement.classList.add(theme || 'light');
-          } catch(e) {}
-        })()
-      `,
-          }}
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body
+        className={`overflow-x-clip dark:bg-primary-dark ${figtree.variable} ${audiowide.variable} ${oxanium.variable} font-figtree`}
         cz-shortcut-listen="true"
-        className={` font-figtree! overflow-x-clip relative bg-white dark:bg-black ${figtree.variable}`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LenisProvider>
-            <Navbar />
-            {children}
-            <MouseTracker />
-            <Themes />
-          </LenisProvider>
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

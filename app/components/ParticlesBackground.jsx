@@ -44,69 +44,61 @@ export default function ParticlesBackground() {
   const isDark = resolvedTheme === "dark";
 
   return (
-      <Particles
-        key={accent}
-        className="absolute inset-0 -z-10"
-        id="tsparticles"
-        options={{
-          fullScreen: { enable: false },
-          background: { color: "transparent" },
-          fpsLimit: 75,
-          particles: {
-            number: {
-              value: isMobile ? 30 : 150,
-              density: {
-                enable: !isMobile,
-                value_area: 800,
-              },
-            },
-
-            color: {
-              value: accent,
-            },
-
-            links: {
-              enable: true,
-              color: isDark ? "#ffffffaa" : "#000000aa",
-              opacity: 0.3,
-            },
-
-            move: {
-              enable: true,
-              speed: isMobile ? 0.8 : 1.5, // 🔥 smoother
-            },
-
-            size: {
-              value: isMobile ? 1.2 : 2,
-            },
-
-            opacity: {
-              value: 0.6,
+    <Particles
+      key={accent}
+      className="fixed inset-0 -z-10"
+      id="tsparticles"
+      options={{
+        fullScreen: { enable: false },
+        background: { color: "transparent" },
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: isMobile ? 30 : 150,
+            density: {
+              enable: !isMobile,
+              value_area: 800,
             },
           },
 
-          interactivity: {
-            events: {
-              onHover: {
-                enable: !isMobile,
-                mode: "grab",
-              },
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-            },
-            modes: {
-              grab: {
-                distance: 120,
-                links: { opacity: 1 },
-              },
-              push: {
-                quantity: isMobile ? 2 : 4,
-              },
+          color: {
+            value: accent,
+          },
+
+          links: {
+            enable: true,
+            color: isDark ? "#ffffffaa" : "#000000aa",
+            opacity: 0.3,
+          },
+
+          move: {
+            enable: true,
+            speed: isMobile ? 0.5 : 0.8, // 🔥 smoother
+          },
+
+          size: {
+            value: isMobile ? 1.2 : 2,
+          },
+
+          opacity: {
+            value: 0.6,
+          },
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: !isMobile,
+              mode: "grab",
             },
           },
-        }}
-      />
+          modes: {
+            grab: {
+              distance: 120,
+              links: { opacity: 1 },
+            },
+          },
+        },
+      }}
+    />
   );
 }

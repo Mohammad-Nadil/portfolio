@@ -1,80 +1,55 @@
 import React from "react";
 import Container from "./Container";
-import { FaCode, FaPaintbrush } from "react-icons/fa6";
-import { MdAnimation } from "react-icons/md";
+import { FaCode, FaServer, FaLayerGroup } from "react-icons/fa6";
 import Header from "./Header";
 
 const About = () => {
-  const languages = [
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "GSAP ",
-    "Responsive Design",
-    "Backend ( MERN )",
-  ];
-
   const skills = [
     {
       title: "Frontend Engineering",
-      desc: "Crafting scalable and high-performance user interfaces with React, Next.js, and modern CSS frameworks like Tailwind.",
+      desc: "building fast, scalable and modern web applications with React, Next.js and Node.js",
       icon: <FaCode />,
     },
     {
-      title: "Motion & Interaction",
-      desc: "Designing fluid and engaging user experiences through advanced animations using GSAP and Framer Motion.",
-      icon: <MdAnimation />,
+      title: "Backend Development",
+      desc: "Developing secure and efficient APIs using Node.js, Express and MongoDB for full-stack applications.",
+      icon: <FaServer />,
     },
     {
-      title: "Client Projects",
-      desc: "Delivering pixel-perfect, responsive websites by converting Figma, PSD, and XD designs into production-ready code.",
-      icon: <FaPaintbrush />,
+      title: "Full Stack Projects",
+      desc: "Creating complete MERN stack applications from UI to backend with real-world performance and scalability.",
+      icon: <FaLayerGroup />,
     },
   ];
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 bg-white dark:bg-primary-dark">
       <Container>
-       <Header text="About Me" />
+        <Header text="About Me" />
         <main>
           <section className="flex flex-col gap-12">
-            {/* ===== Intro ===== */}
-            <div className="flex flex-col lg:flex-row gap-5 md:gap-12 justify-between items-center">
-              {/* Text */}
-              <div className="w-full lg:w-7/12 flex flex-col gap-5 md:gap-8">
+            <div className="flex flex-col lg:flex-row gap-5 md:gap-12  items-center justify-between">
+              <div className="xl:w-7/12 2xl:w-8/12 flex flex-col gap-5 md:gap-8">
                 <span className="text-accent uppercase tracking-widest">
                   Introduction
                 </span>
 
-                <h1 className="text-5xl sm:text-7xl md:text-9xl font-medium tracking-tight  leading-none">
+                <h1 className="text-5xl sm:text-7xl md:text-8xl xl:text-[120px] 2xl:text-9xl font-semibold leading-none">
                   Hossainur <br /> Rashid Nadil
                   <span className="text-accent">_</span>
                 </h1>
 
-                <p className="text-lg sm:text-xl md:text-2xl font-medium /90 max-w-2xl leading-snug">
+                <p className="text-base sm:text-lg md:text-xl font-medium  max-w-2xl leading-snug">
                   I'm a{" "}
-                  <span className="text-primary italic">
-                    Frontend Developer
+                  <span className=" text-accent font-semibold">
+                    Full Stack MERN Developer
                   </span>{" "}
-                  from Dhaka, focused on building modern, responsive and
-                  visually engaging web experiences using React and Next.js.
+                  from Dhaka, building fast, scalable and modern web
+                  applications with React, Next.js and Node.js.
                 </p>
-
-                {/* Skills */}
-                <div className="flex flex-wrap gap-3 mt-4">
-                  {languages.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className=" px-3 sm:px-4 py-2 text-xs  rounded-full border dark:border-white/10 dark:bg-white/15  bg-black/5 border-black/10 cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
               </div>
 
-              {/* Image */}
-              <div className="w-full lg:w-5/12 relative hidden lg:block dark:brightness-75">
+              <div className="w-4/12 xl:w-3/12 relative hidden lg:flex items-center justify-center dark:brightness-75 ">
                 <div className="aspect-4/5 rounded-xl overflow-hidden group relative">
                   <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10" />
 
@@ -100,43 +75,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* ===== About ===== */}
-            <div className="grid md:grid-cols-12 gap-4 ">
-              {/* Philosophy */}
-              <div className="md:col-span-4">
-                <h2 className="uppercase tracking-widest /40 mb-3 border-b border-white/10 pb-3 text-accent text-lg">
-                  My Approach
-                </h2>
-
-                <p className="text-base leading-relaxed ">
-                  I focus on creating clean, smooth and user-friendly
-                  interfaces. My goal is to make websites not only functional
-                  but also visually engaging with subtle animations and modern
-                  UI.
-                </p>
-              </div>
-
-              {/* Bio */}
-              <div className="md:col-span-7 md:col-start-6">
-                <div className="space-y-6">
-                  <p className="text-2xl md:text-3xl   leading-snug">
-                    I build modern web interfaces that feel {""}
-                    <span className="text-accent">
-                      smooth, fast and interactive
-                    </span>
-                    .
-                  </p>
-
-                  <p className=" max-w-xl">
-                    Currently, I'm improving my backend skills with the MERN
-                    stack and working on real-world projects to grow as a
-                    full-stack developer. I also do freelance work, helping
-                    clients turn their designs into fully responsive websites.
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* ===== Skills / Expertise ===== */}
             <div>
               <h2 className=" uppercase tracking-widest text-accent mb-5">
                 What I Do
@@ -146,17 +84,16 @@ const About = () => {
                 {skills.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10  dark:bg-white/5 hover:bg-white/10 transition group hover:bg-linear-to-br hover:from-accent/20 hover:via-accent/0 hover:border-accent/70"
+                    className="p-4 sm:p-6 rounded-xl border border-black/10 dark:border-white/10  dark:bg-white/10  hover:bg-white/10 transition group hover:bg-linear-to-br hover:from-accent/20 hover:via-accent/0 hover:border-accent/70 "
                   >
                     {/* ICON */}
-                    <div className="text-2xl mb-4 text-accent transition">
-                      {item.icon}
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="text-2xl  text-accent transition">
+                        {item.icon}
+                      </div>
+                      {/* TITLE */}
+                      <h3 className="font-semibold text-lg  ">{item.title}</h3>
                     </div>
-
-                    {/* TITLE */}
-                    <h3 className="font-semibold text-lg mb-2 ">
-                      {item.title}
-                    </h3>
 
                     {/* DESC */}
                     <p className="text-sm text-secondary leading-relaxed">

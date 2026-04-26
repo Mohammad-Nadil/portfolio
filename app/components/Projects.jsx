@@ -1,192 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import Header from "./Header";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiMongodb,
-  SiNodedotjs,
-  SiTailwindcss,
-} from "react-icons/si";
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    category: "Fullstack",
-    description: "MERN e-commerce with cart, auth, admin panel and payment.",
-    image: "https://picsum.photos/600/400?1",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Node", icon: <SiNodedotjs /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Portfolio Website",
-    category: "Frontend",
-    description: "Modern animated portfolio using Next.js and GSAP.",
-    image: "https://picsum.photos/600/400?2",
-    tech: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "React", icon: <SiReact /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Chat Application",
-    category: "Fullstack",
-    description: "Real-time chat app using Socket.io and authentication.",
-    image: "https://picsum.photos/600/400?3",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Node", icon: <SiNodedotjs /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Admin Dashboard",
-    category: "Frontend",
-    description: "Analytics dashboard with charts and responsive UI.",
-    image: "https://picsum.photos/600/400?4",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Blog Platform",
-    category: "Fullstack",
-    description: "Full blog system with CRUD, auth and comments.",
-    image: "https://picsum.photos/600/400?5",
-    tech: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Landing Page UI",
-    category: "Frontend",
-    description: "High-converting landing page with smooth animations.",
-    image: "https://picsum.photos/600/400?6",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Authentication System",
-    category: "Backend",
-    description: "JWT auth system with login, register and roles.",
-    image: "https://picsum.photos/600/400?7",
-    tech: [
-      { name: "Node", icon: <SiNodedotjs /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Task Manager App",
-    category: "Fullstack",
-    description: "Task management with drag & drop and realtime updates.",
-    image: "https://picsum.photos/600/400?8",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Node", icon: <SiNodedotjs /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Weather App",
-    category: "Frontend",
-    description: "Weather app using API with modern UI design.",
-    image: "https://picsum.photos/600/400?9",
-    tech: [{ name: "React", icon: <SiReact /> }],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "REST API System",
-    category: "Backend",
-    description: "Scalable REST API with Express and MongoDB.",
-    image: "https://picsum.photos/600/400?10",
-    tech: [
-      { name: "Node", icon: <SiNodedotjs /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Social Media App",
-    category: "Fullstack",
-    description: "Mini social app with posts, likes and comments.",
-    image: "https://picsum.photos/600/400?11",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Movie App",
-    category: "Frontend",
-    description: "Movie browsing app using TMDB API.",
-    image: "https://picsum.photos/600/400?12",
-    tech: [{ name: "React", icon: <SiReact /> }],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "File Upload System",
-    category: "Backend",
-    description: "Secure file upload with storage and validation.",
-    image: "https://picsum.photos/600/400?13",
-    tech: [{ name: "Node", icon: <SiNodedotjs /> }],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Realtime Notification System",
-    category: "Frontend",
-    description: "Socket based notification system.",
-    image: "https://picsum.photos/600/400?14",
-    tech: [
-      { name: "React", icon: <SiReact /> },
-      { name: "Node", icon: <SiNodedotjs /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "UI Component Library",
-    category: "Frontend",
-    description: "Reusable UI components using Tailwind.",
-    image: "https://picsum.photos/600/400?15",
-    tech: [
-      { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "React", icon: <SiReact /> },
-    ],
-    github: "#",
-    live: "#",
-  },
-];
+import { FaGithub } from "react-icons/fa";
+import { HiArrowUpRight } from "react-icons/hi2"; // ✅ cleaner external link icon
+import { projects } from "@/temp/temp";
 
 const filters = [
   "All",
@@ -198,18 +16,28 @@ const filters = [
   "Next.js",
   "Node",
   "MongoDB",
-
+  "Firebase",
 ];
-
-// ✅ একবার এখানে set করো, বাকি সব automatic
-const INITIAL_COUNT = 6;
-const LOAD_MORE_COUNT = 3;
 
 const Projects = () => {
   const [active, setActive] = useState("All");
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT); // ✅ কতটা দেখাবে
+  const [visibleCount, setVisibleCount] = useState(6);
+  const LOAD_MORE_COUNT = 3;
 
-  // Filter logic
+  const getInitialCount = () => {
+    if (window.innerWidth >= 1536) return 8;
+    if (window.innerWidth >= 1024) return 6;
+    if (window.innerWidth >= 640) return 4;
+    return 3;
+  };
+
+  useEffect(() => {
+    const update = () => setVisibleCount(getInitialCount());
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const filtered =
     active === "All"
       ? projects
@@ -219,35 +47,33 @@ const Projects = () => {
 
   const handleFilterChange = (f) => {
     setActive(f);
-    setVisibleCount(INITIAL_COUNT); // নতুন filter এ গেলে আবার শুরু থেকে
+    setVisibleCount(getInitialCount());
   };
 
-  const visibleProjects = filtered.slice(0, visibleCount); // ✅ শুধু এতটুকুই দেখাবে
-  const hasMore = visibleCount < filtered.length; // ✅ আরো আছে কিনা
+  const visibleProjects = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
 
   return (
     <section id="projects" className="py-24">
       <Container>
-        {/* Heading */}
         <div className="text-center mb-12">
           <Header text="Projects" />
-          <p className="text-secondary/70 mt-3">
+          <p className="text-secondary/60 sm:text-base text-sm ">
             Filter by category or tech stack
           </p>
         </div>
 
-        {/* FILTER BUTTONS */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 sm:px-0">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12">
           {filters.map((f) => (
             <button
               key={f}
-              onClick={() => handleFilterChange(f)} // ✅ handleFilterChange ব্যবহার
-              className={`relative px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300
+              onClick={() => handleFilterChange(f)}
+              className={`relative px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 
                 hover:scale-[1.05] active:scale-95
                 ${
                   active === f
                     ? "bg-accent text-white border-accent shadow-md shadow-accent/20"
-                    : "border-black/10 dark:border-white/20 hover:border-accent hover:text-accent"
+                    : "border-black/10 dark:border-white/20 hover:border-accent hover:text-accent bg-white dark:bg-white/20"
                 }`}
             >
               {f}
@@ -258,102 +84,132 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 2xl:grid-cols-4">
-          {visibleProjects.map(
-            (
-              project,
-              i, // ✅ filtered না, visibleProjects
-            ) => (
+        {filtered.length === 0 ? (
+          <div className="text-center py-20 col-span-full flex flex-col items-center gap-3">
+            <div className="text-4xl opacity-40">😕</div>
+            <h3 className="text-xl font-semibold">No projects yet</h3>
+            <p className="text-sm text-secondary/60 max-w-sm">
+              Looks like there are no projects in this category. Try another
+              filter or check back later.
+            </p>
+
+            <button
+              onClick={() => handleFilterChange("All")}
+              className="mt-3 px-5 py-2 rounded-full border border-accent text-accent text-sm font-semibold hover:bg-accent hover:text-white transition"
+            >
+              Show All Projects
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 md:gap-6">
+            {visibleProjects.map((project, i) => (
               <div
                 key={i}
-                className="group relative rounded-2xl overflow-hidden bg-white/5 dark:bg-black/20 border border-black/10 dark:border-white/10 flex flex-col"
+                className="group flex flex-col rounded-2xl overflow-hidden
+                border border-black/10 dark:border-white/10
+                bg-white dark:bg-white/10 backdrop-blur-3xl dark:backdrop-blur-xs
+                hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5
+                transition-all duration-300"
               >
-                {/* IMAGE */}
-                <div className="w-full aspect-video overflow-hidden relative">
+                <div className="relative w-full aspect-video overflow-hidden">
                   <img
-                    src={project.image}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src={project.image || "https://images.unsplash.com/photo-1587831990711-23ca6441447b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVza3RvcCUyMGNvbXB1dGVyfGVufDB8fDB8fHww"}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center gap-4">
-                    <a
-                      href={project.github}
-                      className="bg-white text-black p-3 rounded-full hover:scale-110 transition"
-                    >
-                      <FaGithub />
-                    </a>
-                    <a
-                      href={project.live}
-                      className="bg-accent text-white p-3 rounded-full hover:scale-110 transition"
-                    >
-                      <FaExternalLinkAlt />
-                    </a>
+
+                  <span className="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-black/50 backdrop-blur-sm text-white border border-white/10">
+                    {project.category}
+                  </span>
+
+                  <div className="absolute inset-0  bg-black/50 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-all duration-300 hidden md:flex flex-col items-center justify-center gap-3 p-1">
+                    <p className="text-white text-sm text-center  px-2">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-3 mt-2">
+                      <a
+                        href={project.github}
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold       hover:scale-105 transition-transform"
+                      >
+                        <FaGithub className="text-sm" /> Code
+                      </a>
+                      <a
+                        href={project.live}
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent text-white text-xs font-semibold       hover:scale-105 transition-transform"
+                      >
+                        <HiArrowUpRight className="text-sm" /> Live
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                {/* CONTENT */}
-                <div className="p-3 md:p-4 flex flex-col flex-1">
-                  <span className="text-xs text-accent uppercase">
-                    {project.category}
-                  </span>
-                  <h3 className="text-lg md:text-xl font-bold mt-1">
+                <div className="flex flex-col flex-1 p-4">
+                  <h3 className="text-base md:text-lg font-bold leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-secondary/70 mt-2 flex-1">
+
+                  <p className="md:hidden text-xs text-secondary/60 mt-1.5 leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
 
-                  {/* TECH STACK */}
-                  <div className="flex flex-wrap gap-2 mt-3">
+                  <div className="flex-1" />
+
+                  <div className="flex flex-wrap gap-1.5 mt-3">
                     {project.tech.map((t, idx) => (
-                      <div
+                      <span
                         key={idx}
-                        className="flex items-center gap-1 text-xs"
+                        className="flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-md       bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-accent/40 hover:text-accent transition-colors cursor-default"
                       >
-                        <span className="text-accent text-sm">{t.icon}</span>
+                        <span className="text-accent xs:text-lg leading-none">
+                          {t.icon}
+                        </span>
                         {t.name}
-                      </div>
+                      </span>
                     ))}
                   </div>
 
-                  {/* MOBILE BUTTONS */}
-                  <div className="flex md:hidden gap-3 pt-4">
+                  <div className="md:hidden flex gap-2 mt-4">
+                    {" "}
                     <a
                       href={project.github}
-                      className="text-center py-2 rounded-lg border border-white/10 text-sm"
+                      className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl     border border-black/10 dark:border-white/10 text-xs font-semibold     hover:border-accent/40 hover:text-accent transition-colors"
                     >
-                      GitHub
+                      <FaGithub /> Code
                     </a>
                     <a
                       href={project.live}
-                      className="flex-1 text-center py-2 rounded-lg bg-accent text-white text-sm"
+                      className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl     bg-accent text-white text-xs font-semibold     hover:opacity-90 transition-opacity"
                     >
-                      Live
+                      <HiArrowUpRight /> Live
                     </a>
                   </div>
                 </div>
               </div>
-            ),
-          )}
-        </div>
+            ))}
+          </div>
+        )}
 
-        {/* ✅ SHOW MORE / SHOW LESS BUTTON */}
-        {filtered.length > INITIAL_COUNT && (
-          <div className="flex justify-center mt-12">
-            <button
-              onClick={
-                () =>
-                  hasMore
-                    ? setVisibleCount((prev) => prev + LOAD_MORE_COUNT) // আরো দেখাও
-                    : setVisibleCount(INITIAL_COUNT) // আবার গুটিয়ে নাও
-              }
-              className="px-8 py-3 rounded-full border border-accent text-accent font-semibold text-sm
-                hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.03] active:scale-95"
-            >
-              {hasMore
-                ? `Show More (${filtered.length - visibleCount} remaining)`
-                : "Show Less"}
-            </button>
+        {filtered.length > 0 && (
+          <div className="flex flex-col items-center gap-2 mt-10 md:mt-12">
+            {hasMore && (
+              <button
+                onClick={() =>
+                  setVisibleCount((prev) => prev + LOAD_MORE_COUNT)
+                }
+                className="px-7 py-2.5 rounded-full border border-accent text-accent text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-300 hover:scale-[1.03] active:scale-95"
+              >
+                Show More ( {filtered.length - visibleCount} remaining )
+              </button>
+            )}
+
+            {!hasMore && filtered.length > getInitialCount() && (
+              <button
+                onClick={() => setVisibleCount(getInitialCount())}
+                className="px-7 py-2.5 rounded-full border border-black/10 dark:border-white/10 text-sm font-semibold hover:border-accent hover:text-accent transition-all duration-300 active:scale-95"
+              >
+                Show Less
+              </button>
+            )}
           </div>
         )}
       </Container>

@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import Logo from "@/public/svg/Logo";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
@@ -11,7 +11,6 @@ import {
   FaEnvelope,
   FaFacebookF,
   FaGithub,
-  FaLinkedin,
   FaLinkedinIn,
   FaPhone,
   FaWhatsapp,
@@ -19,25 +18,8 @@ import {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const list = [
-    {
-      id: 1,
-      name: "hero",
-    },
-    {
-      id: 2,
-      name: "about",
-    },
-    {
-      id: 3,
-      name: "projects",
-    },
-    {
-      id: 4,
-      name: "Contact",
-    },
-  ];
+  const list = ["hero", "about", "skills", "projects", "faq", "contact"];
+
   useEffect(() => {
     if (open) {
       const scrollY = window.scrollY;
@@ -60,37 +42,31 @@ const Navbar = () => {
 
   const links = [
     {
-      id: 1,
-      name: "mdhossain.dev@gmail.com",
-      href: "mailto:mdhossain.dev@gmail.com",
+      name: "mdnadil50@gmail.com",
+      href: "mailto:mdnadil50@gmail.com",
       icon: <FaEnvelope />,
     },
     {
-      id: 2,
-      name: "Facebook",
-      href: "https://www.facebook.com/mdhossain.dev",
-      icon: <FaFacebookF />,
-    },
-    {
-      id: 3,
       name: "Github",
       href: "https://github.com/Mohammad-Nadil",
       icon: <FaGithub />,
     },
     {
-      id: 4,
+      name: "Facebook",
+      href: "https://www.facebook.com/mdhossain.dev",
+      icon: <FaFacebookF />,
+    },
+    {
       name: "Linkedin",
       href: "www.linkedin.com/in/mdhossain-dev",
       icon: <FaLinkedinIn />,
     },
     {
-      id: 5,
       name: "+8801760152349",
       href: "tel:+8801760152349",
       icon: <FaPhone />,
     },
     {
-      id: 6,
       name: "whatsapp",
       href: "https://wa.me/8801760152349",
       icon: <FaWhatsapp />,
@@ -99,21 +75,23 @@ const Navbar = () => {
 
   return (
     <nav className=" sticky  top-0 z-100  ">
-      <div className="absolute h-full w-full backdrop-blur -z-10"></div>
-      <Container className={`h-12 sm:py-3 px-0! flex justify-between items-center`}>
+      <div className="absolute h-full w-full backdrop-blur bg-white/20 dark:bg-black/10 -z-10"></div>
+      <Container
+        className={`h-12 sm:py-3 px-0! flex justify-between items-center`}
+      >
         <div className="left flex items-center gap-x-6 md:gap-x-11 px-3 ">
           <Logo className={" w-8 md:w-9"} />
           <ul className="menu hidden sm:flex items-center gap-4 md:gap-x-6">
-            {list.map((item) => (
+            {list.map((item, index) => (
               <li
-                key={item.id}
-                className=" font-medium text-xs text-black dark:text-white uppercase hover:cursor-pointer hover:text-accent duration-300"
+                key={index}
+                className=" font-medium text-sm text-black dark:text-white uppercase hover:cursor-pointer hover:text-accent duration-300"
               >
-                <a href={`#${item.name}`} className="flex items-start gap-1">
+                <a href={`#${item}`} className="flex items-start gap-1">
                   <span className="text-secondary text-[8px] ">
-                    0{item.id}/
+                    0{index + 1}/
                   </span>
-                  {item.name}
+                  {item}
                 </a>
               </li>
             ))}
@@ -128,25 +106,26 @@ const Navbar = () => {
             {open ? "Close" : "Menu"}
           </div>
           <a
-            href="mailto:mdhossain.dev@gmail.com"
-            className="text-secondary text-xs md:text-base hover:text-accent uppercase hidden sm:block"
+            href="mailto:mdnadil50@gmail.com"
+            className="text-secondary text-xs md:text-base hover:text-accent uppercase hidden lg:block"
           >
-            mdhossain.dev@gmail.com
+            mdnadil50@gmail.com
           </a>
         </div>
       </Container>
       <Container
-        className={`fixed top-12 left-0 w-full h-[calc(100dvh-3rem)] bg-black/30 backdrop-blur flex flex-col items-end text-end gap-y-5 z-50 sm:hidden duration-300 py-6 px-5
+        onClick={() => setOpen(false)}
+        className={`fixed top-12 left-0 w-full h-[calc(100dvh-3rem)] bg-white/20 dark:bg-black/10 backdrop-blur flex flex-col items-end text-end gap-y-5 z-50 sm:hidden duration-300 py-3 px-2 xs:px-4
     ${open ? "translate-x-0" : "translate-x-full"}
   `}
       >
-        <ul className="menu flex flex-1 flex-col items-end w-full gap-y-3 xs:gap-y-6  py-4">
-          {list.map((item) => (
+        <ul className="menu flex flex-1 flex-col items-end w-full gap-y-3  ">
+          {list.map((item, index) => (
             <li
-              key={item.id}
-              className=" font-bold text-4xl xs:text-6xl  text-black dark:text-white uppercase hover:cursor-pointer hover:text-accent duration-300"
+              key={index}
+              className=" font-bold text-4xl xs:text-6xl  text-black dark:text-white uppercase hover:cursor-pointer hover:text-accent duration-300 "
             >
-              <a href={`#${item.name}`}>{item.name}</a>
+              <a href={`#${item}`}>{item}</a>
             </li>
           ))}
         </ul>
@@ -160,17 +139,17 @@ const Navbar = () => {
             <ThemeToggle />
           </div>
         </div>
-        <div className="w-full flex flex-wrap items-center gap-x-6 gap-y-3">
-          {links.map((link) => (
+        <div className="w-full flex flex-wrap font-medium items-center mb-3  gap-x-6 gap-y-3 font-oxanium">
+          {links.map((link, index) => (
             <a
-              key={link.id}
+              key={index}
               target="_blank"
               href={link.href}
               className="flex items-center gap-1 "
             >
               <FaArrowRightLong className="text-xl -rotate-45 " />
               {link.icon}
-              <p className="text-secondary">{link.name}</p>
+              <p className="text-secondary xs:text-lg">{link.name}</p>
             </a>
           ))}
         </div>
