@@ -319,7 +319,7 @@ export const projects = [
       "Multi-page educational website built for client with structured sections and real content integration.",
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Node", icon: <FaNode /> },
+      { name: "Node", icon: <FaNodeJs /> },
       {name:"Mongo",icon: <SiMongodb/> }
     ],
   },
