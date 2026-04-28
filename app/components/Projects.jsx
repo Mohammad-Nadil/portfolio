@@ -10,15 +10,15 @@ const filters = [
   "All",
   "Client Work",
   "Frontend",
- // "Backend",
   "Fullstack",
   "Tailwind",
   "React",
   "Next.js",
   "Node",
   "MongoDB",
- // "Firebase",
 ];
+
+//backend firebase
 
 const Projects = () => {
   const [active, setActive] = useState("All");
