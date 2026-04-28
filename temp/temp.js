@@ -226,6 +226,7 @@ export const skills = [
   },
 ];
 
+
 export const projects = [
   {
     title: "Simple Wood",
@@ -279,7 +280,7 @@ export const projects = [
     title: "WBB Trust",
     image:"/image/wbb.png",
     live: "https://wbbtrust.org/",
-    github: "", 
+    github: " ",
     category: "Client Work",
     status: "Contributed",
     description:
