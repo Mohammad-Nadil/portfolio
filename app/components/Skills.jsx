@@ -3,11 +3,12 @@ import Container from "./Container";
 import Header from "./Header";
 import { skills } from "@/temp/temp";
 
-
-
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 md:py-24 bg-white dark:bg-black ">
+    <section
+      id="skills"
+      className="py-16 md:py-24 bg-white/60 dark:bg-primary-dark/60  "
+    >
       <Container>
         <Header text="Skills & Tools" />
         <div className=" text-center mb-12">
@@ -20,7 +21,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid gap-3.5 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3.5 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 backdrop-blur-sm">
           {skills.map((group, i) => (
             <div
               key={i}

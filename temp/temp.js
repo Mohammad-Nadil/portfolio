@@ -229,8 +229,9 @@ export const skills = [
 export const projects = [
   {
     title: "Simple Wood",
+    image:"/image/simplewood.png",
     live: "https://simplewood.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
+    github: "https://github.com/Mohammad-Nadil/simple-wood",
     category: "Frontend",
     status: "Completed",
     description:
@@ -244,8 +245,9 @@ export const projects = [
 
   {
     title: "Morent",
+    image:"/image/morent.png",
     live: "https://morent-hazel.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
+    github: "https://github.com/Mohammad-Nadil/MORENT",
     category: "Frontend",
     status: "Completed",
     description:
@@ -253,55 +255,63 @@ export const projects = [
     tech: [
       { name: "React", icon: <SiReact /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
+      { name: "Redux", icon: <SiRedux /> },
     ],
   },
 
   {
     title: "Audira",
+    image:"/image/audira.jpg",
     live: "https://audira-gsap.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
+    github: "https://github.com/Mohammad-Nadil/audira",
     category: "Animation",
     status: "Completed",
     description:
       "High-end animated landing page focusing on scroll animations and modern UI transitions.",
     tech: [
       { name: "GSAP", icon: <SiGsap /> },
-      { name: "React", icon: <SiReact /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Lenis", icon: <LenisIcon /> },
     ],
   },
 
   {
-    title: "Trial Project (WBB Trust)",
+    title: "WBB Trust",
+    image:"/image/wbb.png",
     live: "https://wbbtrust.org/",
-    github: "https://github.com/mohammad-nadil/",
+    github: "", // ❗ leave empty (client work)
     category: "Client Work",
     status: "Contributed",
     description:
       "Contributed to the homepage UI of a multi-page client website. Worked on initial implementation and UI fixes before final deployment.",
     tech: [
-      { name: "HTML", icon: <FaHtml5 /> },
-      { name: "CSS", icon: <FaCss3 /> },
+      { name: "React", icon: <SiReact /> },
+      { name: "Tailwind", icon: <SiTailwindcss /> },
+
     ],
   },
 
   {
     title: "HK Estate",
+    image:"/image/hkestate.jpg",
     live: "https://hkestate.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
-    category: "Fullstack",
+    github: "https://github.com/Mohammad-Nadil/HKestate",
+    category: "Animation",
     status: "Completed",
     description:
-      "Real estate website with structured property listing UI and user-friendly navigation system.",
+      "SVG Animated landing page with modern UI transitions and smooth interaction for real-world estate buying experience.",
     tech: [
       { name: "React", icon: <SiReact /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
+      { name: "GSAP", icon: <SiGsap /> },
     ],
   },
 
   {
     title: "Darul Huda",
+    image:"/image/darulhuda.png",
     live: "https://darul-main.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
+    github: "https://github.com/Mohammad-Nadil/darulhuda-frontend",
     category: "Client Work",
     status: "Live",
     description:
@@ -314,29 +324,33 @@ export const projects = [
 
   {
     title: "Velvet Pour",
-    live: "",
-    github: "https://github.com/mohammad-nadil/",
-    category: "Concept",
+    live: "https://cocktail-blush.vercel.app/",
+    image:"/image/velvetpour.png",
+    github: "https://github.com/Mohammad-Nadil/velvet-pour",
+    category: "Animation",
     status: "In Progress",
     description:
       "Stylish beverage themed landing page focusing on premium UI design and smooth visual experience.",
     tech: [
       { name: "React", icon: <SiReact /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
+      { name: "GSAP", icon: <SiGsap /> },
     ],
   },
 
   {
     title: "EBT Eduact",
+    image:"/image/eduact.png",
     live: "https://ebt-eduact.vercel.app/",
-    github: "https://github.com/mohammad-nadil/",
-    category: "Fullstack",
+    github: "https://github.com/Mohammad-Nadil/ebt-eduact",
+    category: "Frontend",
     status: "Improving",
     description:
       "Educational platform UI with multiple sections and structured content for better learning experience.",
     tech: [
       { name: "React", icon: <SiReact /> },
-      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Tailwind", icon: <SiTailwindcss /> },
     ],
   },
 ];
+

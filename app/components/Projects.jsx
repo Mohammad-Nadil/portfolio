@@ -8,6 +8,7 @@ import { projects } from "@/temp/temp";
 
 const filters = [
   "All",
+  "Client Work",
   "Frontend",
   "Backend",
   "Fullstack",
@@ -38,6 +39,23 @@ const Projects = () => {
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  const getStatusStyle = (status) => {
+    switch (status) {
+      case "Completed":
+        return "bg-green-500/90 text-white";
+      case "Live":
+        return "bg-blue-500/90 text-white";
+      case "In Progress":
+        return "bg-yellow-400/90 text-black";
+      case "Improving":
+        return "bg-purple-500/90 text-white";
+      case "Contributed":
+        return "bg-orange-500/90 text-white";
+      default:
+        return "bg-gray-400/80 text-white";
+    }
+  };
+
   const filtered =
     active === "All"
       ? projects
@@ -54,7 +72,7 @@ const Projects = () => {
   const hasMore = visibleCount < filtered.length;
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 bg-white dark:bg-black">
       <Container>
         <div className="text-center mb-12">
           <Header text="Projects" />
@@ -113,7 +131,10 @@ const Projects = () => {
               >
                 <div className="relative w-full aspect-video overflow-hidden">
                   <img
-                    src={project.image || "https://images.unsplash.com/photo-1587831990711-23ca6441447b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVza3RvcCUyMGNvbXB1dGVyfGVufDB8fDB8fHww"}
+                    src={
+                      project.image ||
+                      "https://images.unsplash.com/photo-1587831990711-23ca6441447b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVza3RvcCUyMGNvbXB1dGVyfGVufDB8fDB8fHww"
+                    }
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -128,12 +149,14 @@ const Projects = () => {
                     </p>
                     <div className="flex gap-3 mt-2">
                       <a
+                        target="_blank"
                         href={project.github}
-                        className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold       hover:scale-105 transition-transform"
+                        className={`flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold hover:scale-105 transition-transform ${project.github ? "hover:bg-gray-100" : "opacity-50 cursor-not-allowed"}`}
                       >
                         <FaGithub className="text-sm" /> Code
                       </a>
                       <a
+                        target="_blank"
                         href={project.live}
                         className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent text-white text-xs font-semibold       hover:scale-105 transition-transform"
                       >
@@ -144,9 +167,17 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-col flex-1 p-4">
-                  <h3 className="text-base md:text-lg font-bold leading-snug">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-base md:text-lg font-bold leading-snug">
+                      {project.title}
+                    </h3>
+
+                    <span
+                      className={`px-2 py-0.5 text-[10px] font-semibold rounded-full whitespace-nowrap  ${getStatusStyle(project.status)}`}
+                    >
+                      {project.status}
+                    </span>
+                  </div>
 
                   <p className="md:hidden text-xs text-secondary/60 mt-1.5 leading-relaxed line-clamp-2">
                     {project.description}

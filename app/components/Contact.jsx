@@ -56,7 +56,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 bg-white dark:bg-primary-dark"
+      className="py-20 md:py-28 bg-white dark:bg-black"
     >
       <Container>
         <Header text="Contact" />
@@ -97,7 +97,7 @@ const Contact = () => {
             ))}
           </div>
 
-          <div className="rounded-2xl border lg:col-span-2 border-black/10 dark:bg-white/5 p-5 md:p-8 backdrop-blur-xl">
+          <div className="rounded-2xl border lg:col-span-2 border-black/10 dark:bg-white/10 p-5 md:p-8 backdrop-blur-xl">
             <h3 className="text-lg font-semibold mb-5">Send Message</h3>
 
             <form className="space-y-4">

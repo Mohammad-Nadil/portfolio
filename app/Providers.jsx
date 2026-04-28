@@ -35,7 +35,7 @@ export default function Providers({ children }) {
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <LenisProvider>
         <Navbar />
-        {/* <ParticlesBackground /> */}
+        <ParticlesBackground />
         {children}
         {!mobile && <MouseTracker />}
         <Themes />

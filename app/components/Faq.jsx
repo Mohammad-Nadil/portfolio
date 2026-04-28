@@ -34,7 +34,11 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq" className="relative py-20">
+    <section
+      id="faq"
+      className="relative py-20 bg-white/60 dark:bg-primary-dark/60
+"
+    >
       <Container className={`max-w-4xl! `}>
         {/* Section Header */}
         <div className="mb-16 space-y-4 text-center">
