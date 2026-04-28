@@ -10,14 +10,14 @@ const filters = [
   "All",
   "Client Work",
   "Frontend",
-  "Backend",
+ // "Backend",
   "Fullstack",
   "Tailwind",
   "React",
   "Next.js",
   "Node",
   "MongoDB",
-  "Firebase",
+ // "Firebase",
 ];
 
 const Projects = () => {

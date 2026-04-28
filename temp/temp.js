@@ -233,7 +233,7 @@ export const projects = [
     live: "https://simplewood.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/simple-wood",
     category: "Frontend",
-    status: "Completed",
+    status: "In Progress",
     description:
       "A modern e-commerce platform with smooth UI, product browsing and structured layout for better user experience.",
     tech: [
@@ -312,13 +312,14 @@ export const projects = [
     image:"/image/darulhuda.png",
     live: "https://darul-main.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/darulhuda-frontend",
-    category: "Client Work",
+    category: "Fullstack",
     status: "Live",
     description:
       "Multi-page educational website built for client with structured sections and real content integration.",
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> },
+      { name: "Node", icon: <FaNode /> },
+      {name:"Mongo",icon: <SiMongoDb/>}
     ],
   },
 
