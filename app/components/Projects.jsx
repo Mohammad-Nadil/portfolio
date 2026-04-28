@@ -166,9 +166,9 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col flex-1 p-4">
+                <div className="flex flex-col flex-1 p-2 sm:p-4">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-base md:text-lg font-bold leading-snug">
+                    <h3 className="text-lg md:text-lg font-bold leading-snug">
                       {project.title}
                     </h3>
 
@@ -179,7 +179,7 @@ const Projects = () => {
                     </span>
                   </div>
 
-                  <p className="md:hidden text-xs text-secondary/60 mt-1.5 leading-relaxed line-clamp-2">
+                  <p className="md:hidden text-xs xs:text-sm text-secondary/60 mt-1.5 leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
 
