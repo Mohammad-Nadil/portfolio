@@ -279,7 +279,7 @@ export const projects = [
     title: "WBB Trust",
     image:"/image/wbb.png",
     live: "https://wbbtrust.org/",
-    github: "", // ❗ leave empty (client work)
+    github: "", 
     category: "Client Work",
     status: "Contributed",
     description:
@@ -319,7 +319,7 @@ export const projects = [
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Node", icon: <FaNode /> },
-      {name:"Mongo",icon: <SiMongodb/>}
+      {name:"Mongo",icon: <SiMongodb/> }
     ],
   },
 

@@ -18,7 +18,7 @@ const filters = [
   "MongoDB",
 ];
 
-//backend firebase
+//backend  firebase
 
 const Projects = () => {
   const [active, setActive] = useState("All");
