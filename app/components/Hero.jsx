@@ -21,7 +21,7 @@ const Hero = () => {
             src={imgPlace}
             priority
             alt="placeholder"
-            className=" dark:brightness-75 duration-300  h-full object-cover rounded sm:rounded-xl dark:grayscale-100"
+            className=" dark:brightness-75 duration-300  h-full object-cover rounded sm:rounded-xl dark:grayscale-100 transition-opacity "
           />
         </div>
         <h1
