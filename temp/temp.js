@@ -320,7 +320,7 @@ export const projects = [
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Node", icon: <FaNodeJs /> },
-      {name:"Mongo",icon: <SiMongodb/> }
+      {name:"MongoDB",icon: <SiMongodb/> }
     ],
   },
 
