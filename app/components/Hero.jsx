@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Container from "./Container";
 import imgPlace from "@/public/image/image.jpg";
 import Image from "next/image";
 
 const Hero = () => {
+  const [imgLoaded, setImgLoaded] = useState(false);
   const name = "nadil";
   const profession = [
     "front-end developer",
@@ -12,7 +14,7 @@ const Hero = () => {
     "MERN stack developer",
   ];
   const professionMobile = ["frontend ", "backend ", "MERN stack "];
-  
+
   return (
     <section id="hero" className=" py-10 sm:py-20 lg:py-30 relative">
       <div className={` relative py-26 xs:py-30 md:py-20 xl:py-8 2xl:py-10  `}>
@@ -22,7 +24,8 @@ const Hero = () => {
             priority
             placeholder="blur"
             alt="placeholder"
-            className=" dark:brightness-75 duration-300  h-full object-cover rounded sm:rounded-xl dark:grayscale-100 transition-opacity "
+            onLoad={() => setImgLoaded(true)}
+            className={`dark:brightness-75 duration-300  h-full object-cover rounded sm:rounded-xl dark:grayscale-100 transition-opacity ${imgLoaded ? "opacity-100" : "opacity-0"}`}
           />
         </div>
         <h1
