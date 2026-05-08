@@ -20,6 +20,7 @@ const Hero = () => {
           <Image
             src={imgPlace}
             priority
+            placeholder="blur"
             alt="placeholder"
             className=" dark:brightness-75 duration-300  h-full object-cover rounded sm:rounded-xl dark:grayscale-100 transition-opacity "
           />
