@@ -22,20 +22,11 @@ A modern, responsive and animated developer portfolio built with **Next.js**, **
 ## 🛠️ Tech Stack
 
 ### Frontend
-- React.js
 - Next.js
 - Tailwind CSS
-- TypeScript
 
 ### Animation
 - GSAP
-- Framer Motion
-
-### Backend / Tools
-- Node.js (basic)
-- Firebase
-- Git & GitHub
-- Vercel (deployment)
 
 ---
 
