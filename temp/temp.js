@@ -56,6 +56,19 @@ const LenisIcon = (props) => (
   </svg>
 );
 
+const ZustandIcon = (props) => (
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="M18.106 14.778c-.733 0-1.327.594-1.327 1.328 0 .734.594 1.328 1.327 1.328.734 0 1.328-.594 1.328-1.328s-.594-1.328-1.328-1.328zm-12.212 0c-.734 0-1.328.594-1.328 1.328 0 .734.594 1.328 1.328 1.328.733 0 1.327-.594 1.327-1.328 0-.734-.594-1.328-1.327-1.328zM12 18.528c-1.122 0-2.031-.91-2.031-2.031 0-1.122.91-2.031 2.031-2.031 1.122 0 2.031.909 2.031 2.031 0 1.121-.91 2.031-2.031 2.031zm0-16.14c-5.187 0-9.392 4.205-9.392 9.392 0 5.188 4.205 9.393 9.392 9.393 5.188 0 9.393-4.205 9.393-9.393 0-5.187-4.205-9.392-9.393-9.392zm0 17.072c-4.235 0-7.68-3.445-7.68-7.68 0-4.235 3.445-7.68 7.68-7.68 4.235 0 7.68 3.445 7.68 7.68 0 4.235-3.445 7.68-7.68 7.68zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20.283c-5.12 0-9.283-4.163-9.283-9.283s4.163-9.283 9.283-9.283 9.283 4.163 9.283 9.283-4.163 9.283-9.283 9.283z" />
+  </svg>
+);
+
 export const skills = [
   {
     title: "Frontend",
@@ -100,6 +113,11 @@ export const skills = [
         name: "Redux",
         icon: <SiRedux />,
         link: "https://redux.js.org/",
+      },
+      {
+        name: "Zustand",
+        icon: <ZustandIcon />,
+        link: "https://github.com/pmndrs/zustand",
       },
       {
         name: "Lenis",
@@ -226,30 +244,31 @@ export const skills = [
   },
 ];
 
-
 export const projects = [
   {
     title: "Simple Wood",
-    image:"/image/simplewood.png",
+    image: "/image/simplewood.png",
     live: "https://simplewood.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/simple-wood",
     category: "Frontend",
+    types: ["Frontend", "Tailwind", "Next.js"],
     status: "In Progress",
     description:
       "A modern e-commerce platform with smooth UI, product browsing and structured layout for better user experience.",
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-      { name: "Lenis", icon: <LenisIcon /> },
+      { name: "Zustand", icon: <ZustandIcon /> },
     ],
   },
 
   {
     title: "Morent",
-    image:"/image/morent.png",
+    image: "/image/morent.png",
     live: "https://morent-hazel.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/MORENT",
     category: "Frontend",
+    types:[ "Frontend","Tailwind","React",],
     status: "Completed",
     description:
       "Car rental UI with clean design, responsive layout and smooth interaction for real-world booking experience.",
@@ -262,10 +281,11 @@ export const projects = [
 
   {
     title: "Audira",
-    image:"/image/audira.jpg",
+    image: "/image/audira.jpg",
     live: "https://audira-gsap.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/audira",
     category: "Animation",
+    types:[ "Frontend","Tailwind","Next.js"],
     status: "Completed",
     description:
       "High-end animated landing page focusing on scroll animations and modern UI transitions.",
@@ -278,26 +298,27 @@ export const projects = [
 
   {
     title: "WBB Trust",
-    image:"/image/wbb.png",
+    image: "/image/wbb.png",
     live: "https://wbbtrust.org/",
     github: "",
     category: "Client Work",
+    types:["Client Work", "Frontend","Tailwind","React",],
     status: "Contributed",
     description:
       "Contributed to the homepage UI of a multi-page client website. Worked on initial implementation and UI fixes before final deployment.",
     tech: [
       { name: "React", icon: <SiReact /> },
       { name: "Tailwind", icon: <SiTailwindcss /> },
-
     ],
   },
 
   {
     title: "HK Estate",
-    image:"/image/hkestate.jpg",
+    image: "/image/hkestate.jpg",
     live: "https://hkestate.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/HKestate",
     category: "Animation",
+    types:[ "Frontend","Tailwind","React",],
     status: "Completed",
     description:
       "SVG Animated landing page with modern UI transitions and smooth interaction for real-world estate buying experience.",
@@ -310,26 +331,28 @@ export const projects = [
 
   {
     title: "Darul Huda",
-    image:"/image/darulhuda.png",
+    image: "/image/darulhuda.png",
     live: "https://darul-main.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/darulhuda-frontend",
     category: "Fullstack",
+    types:["Client Work", "Frontend","Backend","Fullstack","Tailwind","React","Next.js","Node","MongoDB"],
     status: "Live",
     description:
       "Multi-page educational website built for client with structured sections and real content integration.",
     tech: [
       { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Node", icon: <FaNodeJs /> },
-      {name:"MongoDB",icon: <SiMongodb/> }
+      { name: "MongoDB", icon: <SiMongodb /> },
     ],
   },
 
   {
     title: "Velvet Pour",
     live: "https://cocktail-blush.vercel.app/",
-    image:"/image/velvetpour.png",
+    image: "/image/velvetpour.png",
     github: "https://github.com/Mohammad-Nadil/velvet-pour",
     category: "Animation",
+    types:[ "Frontend","Tailwind","React",],
     status: "In Progress",
     description:
       "Stylish beverage themed landing page focusing on premium UI design and smooth visual experience.",
@@ -342,10 +365,11 @@ export const projects = [
 
   {
     title: "EBT Eduact",
-    image:"/image/eduact.png",
+    image: "/image/eduact.png",
     live: "https://ebt-eduact.vercel.app/",
     github: "https://github.com/Mohammad-Nadil/ebt-eduact",
     category: "Frontend",
+    types:[ "Frontend","Tailwind","React",],
     status: "Improving",
     description:
       "Educational platform UI with multiple sections and structured content for better learning experience.",
@@ -355,4 +379,3 @@ export const projects = [
     ],
   },
 ];
-

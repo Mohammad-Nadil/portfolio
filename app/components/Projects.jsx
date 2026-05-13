@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import Header from "./Header";
 import { FaGithub } from "react-icons/fa";
-import { HiArrowUpRight } from "react-icons/hi2"; // ✅ cleaner external link icon
+import { HiArrowUpRight } from "react-icons/hi2";
 import { projects } from "@/temp/temp";
 
 const filters = [
@@ -59,9 +59,7 @@ const Projects = () => {
   const filtered =
     active === "All"
       ? projects
-      : projects.filter(
-          (p) => p.category === active || p.tech.some((t) => t.name === active),
-        );
+      : projects.filter((p) => p.types?.includes(active));
 
   const handleFilterChange = (f) => {
     setActive(f);
