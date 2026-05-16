@@ -177,7 +177,7 @@ const Projects = () => {
                     </span>
                   </div>
 
-                  <p className="md:hidden text-xs xs:text-sm text-secondary/60 mt-1.5 leading-relaxed line-clamp-2">
+                  <p className="md:hidden text-xs xs:text-sm text-secondary/60 mt-1.5 leading-relaxed">
                     {project.description}
                   </p>
 
