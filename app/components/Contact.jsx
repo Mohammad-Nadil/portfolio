@@ -54,10 +54,7 @@ const links = [
 
 const Contact = () => {
   return (
-    <section
-      id="contact"
-      className="py-20 md:py-28 bg-white dark:bg-black"
-    >
+    <section id="contact" className="py-20 md:py-28 bg-white dark:bg-black">
       <Container>
         <Header text="Contact" />
 
@@ -100,15 +97,21 @@ const Contact = () => {
           <div className="rounded-2xl border lg:col-span-2 border-black/10 dark:bg-white/10 p-5 md:p-8 backdrop-blur-xl">
             <h3 className="text-lg font-semibold mb-5">Send Message</h3>
 
-            <form className="space-y-4">
+            <form
+              action="https://formspree.io/f/mblrnyjv"
+              method="POST"
+              className="space-y-4"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent transition"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
                   className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent transition"
                 />
@@ -116,11 +119,13 @@ const Contact = () => {
 
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
                 className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent transition"
               />
 
               <textarea
+                name="message"
                 rows="5"
                 placeholder="Your Message"
                 className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent resize-none transition"
