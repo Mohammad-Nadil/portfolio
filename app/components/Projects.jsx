@@ -33,8 +33,17 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    const update = () => setVisibleCount(getInitialCount());
-    update();
+    let lastWidth = window.innerWidth;
+
+    const update = () => {
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        setVisibleCount(getInitialCount());
+      }
+    };
+
+    setVisibleCount(getInitialCount()); // initial set, only once
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
