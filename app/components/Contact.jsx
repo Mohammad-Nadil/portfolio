@@ -40,14 +40,14 @@ const links = [
   },
   {
     id: 5,
-    name: "+8801760152349",
-    href: "tel:+8801760152349",
+    name: "+8801981418639",
+    href: "tel:+8801981418639",
     icon: <FaPhone />,
   },
   {
     id: 6,
     name: "WhatsApp",
-    href: "https://wa.me/8801760152349",
+    href: "https://wa.me/8801981418639",
     icon: <FaWhatsapp />,
   },
 ];
