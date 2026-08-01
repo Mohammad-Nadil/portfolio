@@ -11,7 +11,7 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaInstagram } from "react-icons/fa6";
 
 const links = [
   {
@@ -50,6 +50,12 @@ const links = [
     href: "https://wa.me/8801981418639",
     icon: <FaWhatsapp />,
   },
+  {
+    id: 7,
+    name: "Instagram  ",
+    href: "https://www.instagram.com/mdhossain.dev",
+    icon: <FaInstagram />
+  }
 ];
 
 const Contact = () => {
@@ -126,7 +132,7 @@ const Contact = () => {
 
               <textarea
                 name="message"
-                rows="5"
+                rows="7"
                 placeholder="Your Message"
                 className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent resize-none transition"
               />
