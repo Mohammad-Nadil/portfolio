@@ -54,7 +54,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10" />
 
                   <img
-                    src="/image/image.jpg"
+                    src="/image/2nd.jpg"
                     alt="Nadil"
                     className="w-full h-full object-cover transition duration-700 scale-105 group-hover:scale-100"
                   />

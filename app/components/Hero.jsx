@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Container from "./Container";
-import imgPlace from "@/public/image/image.jpg";
+import imgPlace from "@/public/image/main.png";
 import Image from "next/image";
 
 const Hero = () => {
