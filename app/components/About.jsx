@@ -28,18 +28,18 @@ const About = () => {
         <Header text="About Me" />
         <main>
           <section className="flex flex-col gap-12">
-            <div className="flex flex-col lg:flex-row gap-5 md:gap-12  items-center justify-between">
+            <div className="flex flex-col md:flex-row gap-5 lg:gap-12  items-center justify-between">
               <div className="xl:w-7/12 2xl:w-8/12 flex flex-col gap-5 md:gap-8">
                 <span className="text-accent uppercase tracking-widest">
                   Introduction
                 </span>
 
-                <h1 className="text-5xl sm:text-7xl md:text-8xl xl:text-[120px] 2xl:text-9xl font-semibold leading-none">
+                <h1 className="text-5xl sm:text-7xl md:text-6xl xl:text-[120px] 2xl:text-9xl font-semibold leading-none">
                   Hossainur <br /> Rashid Nadil
                   <span className="text-accent">_</span>
                 </h1>
 
-                <p className="text-base sm:text-lg md:text-xl font-medium  max-w-2xl leading-snug">
+                <p className="text-base sm:text-lg lg:text-xl font-medium  max-w-2xl leading-snug">
                   I'm a{" "}
                   <span className=" text-accent font-semibold">
                     Full Stack MERN Developer
@@ -49,22 +49,22 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="w-4/12 xl:w-3/12 relative hidden lg:flex items-center justify-center dark:brightness-75 ">
-                <div className="aspect-4/5 rounded-xl overflow-hidden group relative">
+              <div className="w-full sm:w-8/12 lg:w-6/12 xl:w-3/12 relative flex items-center justify-center dark:brightness-75 mx-auto">
+                <div className="w-full max-w-[320px] sm:max-w-95 lg:max-w-none aspect-4/5 rounded-xl overflow-hidden group relative">
                   <div className="absolute inset-0 bg-primary/10 mix-blend-overlay z-10" />
 
                   <img
-                    src="/image/2nd.jpg"
+                    src="/image/2nd.jpeg"
                     alt="Nadil"
                     className="w-full h-full object-cover transition duration-700 scale-105 group-hover:scale-100"
                   />
 
                   <div className="absolute bottom-5 right-5 z-20">
-                    <div className=" backdrop-blur-md bg-black/5 px-4 py-3 rounded-lg border border-white/10 text-white">
+                    <div className="backdrop-blur-md bg-black/5 px-4 py-3 rounded-lg border border-white/10 text-white">
                       <p className="text-[10px] uppercase tracking-widest text-primary">
                         Available for
                       </p>
-                      <p className="text-sm font-semibold ">
+                      <p className="text-sm font-semibold">
                         Freelance Projects
                       </p>
                     </div>
