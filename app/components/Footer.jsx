@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-black/10 dark:border-white/10 ">
       <Container>
-        <div className="py-10 md:py-14 flex flex-col md:flex-row justify-between gap-8 ">
+        <div className="py-8 flex flex-col md:flex-row justify-between gap-8 ">
           {/* ─── BRAND / ABOUT ─── */}
           <div className="space-y-3">
             <Logo className={" w-5 md:w-7"} />

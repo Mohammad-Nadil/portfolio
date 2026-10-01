@@ -32,7 +32,7 @@ export default function Providers({ children }) {
   if (loading) return <Loader />;
 
   return (
-  <div className="overflow-x-clip max-w-screen">
+  <div className="overflow-x-clip max-w-screen ">
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <LenisProvider>
         <Navbar />

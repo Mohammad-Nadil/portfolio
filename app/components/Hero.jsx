@@ -16,9 +16,9 @@ const Hero = () => {
   const professionMobile = ["frontend ", "backend ", "MERN stack "];
 
   return (
-    <section id="hero" className=" py-10 sm:py-20 lg:py-30 relative">
+    <section id="hero" className=" py-10 sm:py-20 lg:py-30 xl:p-0 relative">
       <div className={` relative py-26 xs:py-30 md:py-20 xl:py-8 2xl:py-10  `}>
-        <div className="absolute aspect-4/6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-[60%] z-20 w-[65vw] sm:w-80 lg:w-100 ">
+        <div className="absolute aspect-4/6 xl:aspect-4/5  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-translate-y-[60%] z-20 w-[65vw] sm:w-80 lg:w-100 ">
           <Image
             src={imgPlace}
             priority

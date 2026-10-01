@@ -29,21 +29,21 @@ const About = () => {
         <main>
           <section className="flex flex-col gap-12">
             <div className="flex flex-col md:flex-row gap-5 lg:gap-12  items-center justify-between">
-              <div className="xl:w-7/12 2xl:w-8/12 flex flex-col gap-5 md:gap-8">
+              <div className="xl:w-7/12 2xl:w-8/12 flex flex-col gap-5 ">
                 <span className="text-accent uppercase tracking-widest">
                   Introduction
                 </span>
 
-                <h1 className="text-5xl sm:text-7xl md:text-6xl xl:text-[120px] 2xl:text-9xl font-semibold leading-none">
+                <h1 className="text-5xl sm:text-7xl md:text-6xl xl:text-[120px] 2xl:text-9xl font-semibold leading-[0.9] ">
                   Hossainur <br /> Rashid Nadil
                   <span className="text-accent">_</span>
                 </h1>
 
                 <p className="text-base sm:text-lg lg:text-xl font-medium  max-w-2xl leading-snug">
-                  I'm a{" "}
+                  I'm a
                   <span className=" text-accent font-semibold">
                     Full Stack MERN Developer
-                  </span>{" "}
+                  </span>
                   from Dhaka, building fast, scalable and modern web
                   applications with React, Next.js and Node.js.
                 </p>

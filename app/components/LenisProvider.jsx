@@ -9,22 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisProvider({ children }) {
   useEffect(() => {
+    // Only enable on screens wider than 1536px
+    const mediaQuery = window.matchMedia("(min-width: 1536px)");
+
+    if (!mediaQuery.matches) return;
+
     const lenis = new Lenis({
       duration: 1.2,
-      smooth: true,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
+    const update = (time) => {
       lenis.raf(time * 1000);
-    });
+    };
 
+    gsap.ticker.add(update);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      gsap.ticker.remove(update);
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 
