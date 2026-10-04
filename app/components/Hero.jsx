@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Container from "./Container";
 import imgPlace from "@/public/image/main.png";
 import Image from "next/image";
@@ -14,16 +14,6 @@ const Hero = () => {
   ];
   const professionMobile = ["frontend ", "backend ", "MERN stack "];
 
-  const [imgLoaded, setImgLoaded] = useState(false);
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldAnimate(true);
-    }, 400);
-
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <section id="hero" className=" py-10 sm:py-20 lg:py-30 xl:p-0 relative">
       <div className={` relative py-26 xs:py-30 md:py-20 xl:py-8 2xl:py-10  `}>
@@ -33,14 +23,7 @@ const Hero = () => {
             priority
             placeholder="blur"
             alt="Nadil"
-            onLoad={() => setImgLoaded(true)}
-            className={`dark:brightness-75 h-full object-cover rounded sm:rounded-xl dark:grayscale-100 ${
-              shouldAnimate
-                ? `transition-opacity duration-700 ease-out ${
-                    imgLoaded ? "opacity-100" : "opacity-0"
-                  }`
-                : "opacity-100"
-            }`}
+            className={`dark:brightness-75 h-full object-cover rounded sm:rounded-xl dark:grayscale-100 `}
           />
         </div>
         <h1
