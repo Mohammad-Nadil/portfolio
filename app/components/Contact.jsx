@@ -54,8 +54,8 @@ const links = [
     id: 7,
     name: "Instagram  ",
     href: "https://www.instagram.com/mdhossain.dev",
-    icon: <FaInstagram />
-  }
+    icon: <FaInstagram />,
+  },
 ];
 
 const Contact = () => {
@@ -110,12 +110,14 @@ const Contact = () => {
             >
               <div className="grid md:grid-cols-2 gap-4">
                 <input
+                  required
                   type="text"
                   name="name"
                   placeholder="Your Name"
                   className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-white/10 outline-none focus:border-accent transition"
                 />
                 <input
+                  required
                   type="email"
                   name="email"
                   placeholder="Your Email"
@@ -124,6 +126,7 @@ const Contact = () => {
               </div>
 
               <input
+                required
                 type="text"
                 name="subject"
                 placeholder="Subject"
@@ -131,6 +134,7 @@ const Contact = () => {
               />
 
               <textarea
+                required
                 name="message"
                 rows="7"
                 placeholder="Your Message"

@@ -42,7 +42,9 @@ const About = () => {
                 <p className="text-base sm:text-lg lg:text-xl font-medium  max-w-2xl leading-snug">
                   I'm a
                   <span className=" text-accent font-semibold">
-                    Full Stack MERN Developer
+                    {" "}
+                      Full Stack MERN Developer
+                    {" "}
                   </span>
                   from Dhaka, building fast, scalable and modern web
                   applications with React, Next.js and Node.js.
