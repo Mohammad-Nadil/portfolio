@@ -87,7 +87,7 @@ const Navbar = () => {
                 key={index}
                 className=" font-medium text-sm text-black dark:text-white uppercase hover:cursor-pointer hover:text-accent duration-300"
               >
-                <a href={`#${item}`} className="flex items-start gap-1">
+                <a href={`/#${item}`} className="flex items-start gap-1">
                   <span className="text-secondary text-[8px] ">
                     0{index + 1}/
                   </span>

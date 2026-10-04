@@ -35,7 +35,6 @@ export default function Providers({ children }) {
   <div className="overflow-x-clip max-w-screen ">
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <LenisProvider>
-        <Navbar />
         <ParticlesBackground />
         {children}
         {!mobile && <MouseTracker />}
