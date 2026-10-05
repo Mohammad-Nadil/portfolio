@@ -39,7 +39,6 @@ export default function Providers({ children }) {
         {children}
         {!mobile && <MouseTracker />}
         <Themes />
-        <Footer />
       </LenisProvider>
     </ThemeProvider>
   </div>
